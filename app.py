@@ -12,7 +12,7 @@ import pandas as pd
 import tweepy as tw
 import requests
 import json
-#import SentiSid
+
 
 app = Flask(__name__)
 
@@ -165,13 +165,6 @@ def twitter():
  
         tweet_text.reset_index(inplace=True)
         
-        #tweet_text['SentiScore']=0
-        #for i in range(len(tweet_text.index)):
-            #Sentiscore = SentiSid.predict_Senti(str(tweet_text["tweet"][i]))
-            #if(Sentiscore >= 0.5):
-              #  tweet_text.iloc[i:i+1,10:11] = 1
-            #else:
-             #   tweet_text.iloc[i:i+1,10:11] = -1
         
         tweet_pos = tweet_text[tweet_text["label"]==1]
         tweet_neg = tweet_text[tweet_text["label"]==-1]
